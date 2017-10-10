@@ -65,31 +65,27 @@ export default {
             });
         }, 200);
 
-        this.changeComHeaderFlag(true);
-        this.changeComFooterFlag(true);
-        this.changeIndex();
+        this.changeComHeaderFlag1(true);
+        this.changeComFooterFlag1(true);
+        this.changeIndex1();
     },
 
     // 被缓存离开才会触发这个钩子
     deactivated() {
-        this.changeComHeaderFlag(false);
-        this.changeComFooterFlag(false);
+        this.changeComHeaderFlag1(false);
+        this.changeComFooterFlag1(false);
     },
 
     methods : {
-        ...mapActions({
-            changeComHeaderFlag : 'changeComHeaderFlag1',
-            changeComFooterFlag : 'changeComFooterFlag1',
-            changeIndex : 'changeIndex1',
-            changeIsLoading : 'changeIsLoading1',
-            changeIsEnd : 'changeIsEnd1'
-        }),
+        ...mapActions([
+            'changeComHeaderFlag1',
+            'changeComFooterFlag1',
+            'changeIndex1',
+        ]),
 
         getData() {
-            this.changeIsLoading(true);
             this.axios.post(this.API.indexMo).then( ( data ) => {
                 this.indexData = data.data;
-                this.changeIsLoading(false);
                 this.$nextTick( () => {
                     let mySwiper = new Swiper('.swiper-container',{
                         loop:true,
