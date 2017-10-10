@@ -90,22 +90,22 @@ export default {
     activated() {
         this.getUserInfo();
         this.getTradeCount();
-        this.changeComFooterFlag(true);
-        this.changeMy();
+        this.changeComFooterFlag1(true);
+        this.changeMy1();
     },
 
     // 被缓存离开才会触发这个钩子
     deactivated() {
-        this.changeComFooterFlag(false);
+        this.changeComFooterFlag1(false);
     },
 
     methods : {
-        ...mapActions({
-            changeComFooterFlag : 'changeComFooterFlag1',
-            changeMy: 'changeMy1',
-            changeIsLogin : 'changeIsLogin1',
-            changeCarCount : 'changeCarCount1'
-        }),
+        ...mapActions([
+            'changeComFooterFlag1',
+            'changeMy1',
+            'changeIsLogin1',
+            'changeCarCount1'
+        ]),
 
         getUserInfo() {
             this.axios.post(this.API.checkUser)
@@ -131,9 +131,9 @@ export default {
             this.axios.post(this.API.loginOut)
             .then( (data) => {
                 if ( data.data.success ) {
-                    this.changeIsLogin(false);
+                    this.changeIsLogin1(false);
                     this.axios.post(this.API.carCount).then( ( data ) => {
-                        this.changeCarCount(data.data.count);
+                        this.changeCarCount1(data.data.count);
                     });
                     this.$router.push('/');
                 }

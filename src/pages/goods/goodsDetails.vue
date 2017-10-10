@@ -204,9 +204,9 @@ export default {
 
     methods : {
 
-        ...mapActions({
-            changeCarCount : 'changeCarCount1'
-        }),
+        ...mapActions([
+            'changeCarCount1'
+        ]),
 
         // 点击购买
         goBuy() {
@@ -386,7 +386,7 @@ export default {
                 var data = data.data;
                 if ( data.success ) {
                     this.axios.post(this.API.carCount).then( ( data ) => {
-                        this.changeCarCount(data.data.count);
+                        this.changeCarCount1(data.data.count);
                     });
                     window.$toast({
                         msg : '加入购物车成功'

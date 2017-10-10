@@ -47,10 +47,10 @@ export default {
 
     methods : {
 
-        ...mapActions({
-            changeIsLogin : 'changeIsLogin1',
-            changeCarCount : 'changeCarCount1'
-        }),
+        ...mapActions([
+            'changeIsLogin1',
+            'changeCarCount1'
+        ]),
 
         checkMobile() {
             if( commonMethods.testPhone(this.mobile.value) ) {
@@ -90,9 +90,9 @@ export default {
                         var msg  = data.data.msg;
                         if( msg==='00000000' ) {
                             this.$router.go(-1);
-                            this.changeIsLogin(true);
+                            this.changeIsLogin1(true);
                             this.axios.post(this.API.carCount).then( ( data ) => {
-                                this.changeCarCount(data.data.count);
+                                this.changeCarCount1(data.data.count);
                             });
                         } else if( msg==='00000001' ) {
                             window.$toast({

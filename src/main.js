@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import App from '@/App';
+import axios from 'axios';
 import router from '@/router';
 import store from '@/vuex';
 import commonMthods from '@/js/common';
 import '@/css/common.css';
 import API from '@/js/api';
-import axios from 'axios';
 
 Vue.prototype.axios = axios;
 Vue.prototype.API = API;
@@ -34,7 +34,6 @@ axios.post(API.checkUser).then( ( data ) => {
             App
         }
     });
-
 });
 
 

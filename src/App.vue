@@ -45,7 +45,7 @@ export default {
         ])
     },
 
-    // 在APP.vue里面可以监听组件的切换
+    // 在APP.vue里面可以监听组件的切换从而可以给每个组件都定制不同的过度效果
     watch: {
         '$route' (to, from) {
             let toPage = to.name,

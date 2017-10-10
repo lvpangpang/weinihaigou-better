@@ -53,23 +53,23 @@ export default {
         this.$nextTick(() => {
             new lazyImg();
         });
-        this.changeComHeaderFlag(true);
-        this.changeComFooterFlag(true);
-        this.changeClass();
+        this.changeComHeaderFlag1(true);
+        this.changeComFooterFlag1(true);
+        this.changeClass1();
     },
 
     // 被缓存离开才会触发这个钩子
     deactivated() {
-        this.changeComHeaderFlag(false);
-        this.changeComFooterFlag(false);
+        this.changeComHeaderFlag1(false);
+        this.changeComFooterFlag1(false);
     },
 
     methods : {
-        ...mapActions({
-            changeComHeaderFlag : 'changeComHeaderFlag1',
-            changeComFooterFlag : 'changeComFooterFlag1',
-            changeClass : 'changeClass1',
-        }),
+        ...mapActions([
+            'changeComHeaderFlag1',
+            'changeComFooterFlag1',
+            'changeClass1',
+        ]),
 
         change(e) {
             var e = e.target;
