@@ -95,6 +95,5 @@ http-server -P http://www.weinihaigou.com/
 <img src="https://github.com/lvpangpang/weinihaigou/blob/master/pics/img(13).png" width="360" height="500"/><img src="https://github.com/lvpangpang/weinihaigou/blob/master/pics/img(14).png" width="360" height="500"/>
 
 
-<strong style="color:red;">该个人项目目前在重构中。。。预计10月份完成</strong>
 
 
