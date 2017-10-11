@@ -62,8 +62,14 @@ export default {
     },
 
     mounted() {
-
         let oThis = this;
+        this.getGoodsList();
+        $(window).scroll(() => {
+            this.scrollGetData();
+        });
+        this.$nextTick( () => {
+            new lazyImg();
+        });
 
         // 条件筛选
         $('.com-goods-sort a').click(function() {
@@ -98,17 +104,6 @@ export default {
                 that.addClass('active down');
             }
             oThis.getGoodsList();
-        });
-
-    },
-
-    mounted() {
-        this.getGoodsList();
-        $(window).scroll(() => {
-            this.scrollGetData();
-        });
-        this.$nextTick( () => {
-            new lazyImg();
         });
     },
 
