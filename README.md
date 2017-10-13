@@ -33,7 +33,8 @@ git clone https://github.com/lvpangpang/weinihaigou-better.git 
 
 cd weinihaigou-better
 
-npm install（<strong>有时候会报错，plantomjs-prebuildt@2.1.15 install 'node install.js'，没关系，也是跑的起来的哈，应该是node版本问题</strong>）
+npm install
+有时候安装依赖后会报错  plantomjs-prebuildt@2.1.15 install 'node install.js'，没关系，也是跑的起来的哈，应该是node版本问题
 
 npm run dev 
 
