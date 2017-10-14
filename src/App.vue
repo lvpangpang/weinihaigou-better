@@ -8,7 +8,7 @@
         <com-header :comHeaderFlag="comHeaderFlag" :carCount="carCount"></com-header>
 
         <!-- 主要内容 -->
-        <transition :name="slideFade">
+        <transition mode="out-in" name="slide-fade">
             <!-- exclude指定不用缓存的组件 -->
             <keep-alive :include="['index','class','my']">
                 <router-view></router-view>
@@ -48,15 +48,6 @@ export default {
     // 在APP.vue里面可以监听组件的切换从而可以给每个组件都定制不同的过度效果
     watch: {
         '$route' (to, from) {
-            let toPage = to.name,
-                transitionName = 'slide-fade';
-            switch(toPage) {
-                case 'shopCar':
-                transitionName = 'slide-fade1';
-                case 'order':
-                transitionName = 'slide-fade1';
-            }
-            this.slideFade = transitionName;
         }
     },
 
@@ -88,14 +79,13 @@ export default {
 
 <style>
 .slide-fade-enter-active,
-.slide-fade1-enter-active {
+.slide-fade-leave-active {
     transition: all .2s ease;
 }
 .slide-fade-enter {
-    transform: translateX(40px);
-    opacity: 0;
+    transform: translateX(100%);
 }
-.slide-fade1-enter {
-    transform: translateY(100px);
+.slide-fade-leave-to {
+    transform: translateX(100%);
 }
 </style>
