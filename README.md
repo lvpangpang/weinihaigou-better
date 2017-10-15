@@ -3,7 +3,8 @@
 
 新增项目视频展示
 <video width="320" height="240" controls="controls" autoplay="autoplay">
-  <object data="/i/movie.mp4" width="320" height="240">
+<source src="movie.mp4" type="video/mp4" />
+  <object data="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1" width="320" height="240">
     <embed width="320" height="240" src="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1" />
   </object>
 </video>
