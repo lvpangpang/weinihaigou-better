@@ -5,7 +5,7 @@ import index from '@/pages/index';
 Vue.use(Router);
 
 export default new Router({
-    mode: 'history',
+    // mode: 'history',
     routes: [
         {
             path: '/',
@@ -67,9 +67,6 @@ export default new Router({
             name: 'order',
             component: resolve => require(['../pages/my/order.vue'], resolve)
         },
-    ],
-    scrollBehavior (to, from, savedPosition) {
-        return { x: 0, y: 0 };
-    }
+    ]
 });
 
