@@ -8,7 +8,7 @@
         <com-header :comHeaderFlag="comHeaderFlag" :carCount="carCount"></com-header>
 
         <!-- 主要内容 -->
-        <transition mode="out-in" name="slide-fade">
+        <transition name="fade">
             <!-- exclude指定不用缓存的组件 -->
             <keep-alive :include="['index','class','my']">
                 <router-view></router-view>
@@ -31,7 +31,6 @@ export default {
     name: 'app',
     data() {
         return {
-            slideFade : 'slide-fade'
         }
     },
     computed : {
@@ -48,6 +47,9 @@ export default {
     // 在APP.vue里面可以监听组件的切换从而可以给每个组件都定制不同的过度效果
     watch: {
         '$route' (to, from) {
+            setTimeout(function() {
+                document.body.scrollTop = 0;
+            }, 0);
         }
     },
 
@@ -78,14 +80,10 @@ export default {
 </script>
 
 <style>
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-    transition: all .2s ease;
+.fade-enter-active {
+    transition: all 1.2s ease;
 }
-.slide-fade-enter {
-    transform: translateX(100%);
-}
-.slide-fade-leave-to {
-    transform: translateX(100%);
+.fade-enter {
+    opacity: 0;
 }
 </style>
