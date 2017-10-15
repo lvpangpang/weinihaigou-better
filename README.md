@@ -1,7 +1,7 @@
 # weinihaigou-better
 单页面 海淘商城(优化版)
 
-#新增项目视频展示
+新增项目视频展示
 <a href="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1">项目视频展示连接</a>
 
 # 前言
