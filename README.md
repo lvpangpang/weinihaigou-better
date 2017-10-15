@@ -2,13 +2,7 @@
 单页面 海淘商城(优化版)
 
 新增项目视频展示
-<video width="320" height="240" controls="controls" autoplay="autoplay">
-<source src="movie.mp4" type="video/mp4" />
-  <object data="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1" width="320" height="240">
-    <embed width="320" height="240" src="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1" />
-  </object>
-</video>
-<a href="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1">项目视频展示连接</a>
+<a href="https://pan.baidu.com/play/video#video/path=%2Fweinihaigou-better.mp4&t=-1">项目视频展示链接</a>
 
 # 前言
 
