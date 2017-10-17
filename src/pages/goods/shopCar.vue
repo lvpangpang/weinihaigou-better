@@ -462,6 +462,7 @@ export default {
             this.axios.post(this.API.shopCarIndexMobile).then( ( data ) => {
                 var data = data.data;
                 if(data.msg) {
+                    this.isLoading = false;
                     if ( data.carList ) {
                         data.carList.forEach(function( item, index, arr) {
                             // 如果有活动才手动添加对应属性
