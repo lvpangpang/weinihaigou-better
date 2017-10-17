@@ -200,6 +200,23 @@ export default {
             oThis.closeAll();
         });
         this.detailMo();
+
+        // 选择商品
+        $(document).off().on('click', '.sku-con-items a', function() {
+            if( $(this).hasClass('active') ) {
+                return;
+            }
+            var index = $(this).index();
+            $('.sku-con-items a').removeClass('active');
+            $(this).addClass('active');
+            // 改变sku对象
+            oThis.showSku = oThis.goodsDetails[index];
+            oThis.skuId = oThis.showSku.skuId;
+            oThis.count = oThis.showSku.count;
+
+            // 重新获取sku区间价格
+            oThis.getSkuPrice();
+        });
     },
 
     methods : {
@@ -241,7 +258,7 @@ export default {
             }
             if ( this.isBuy ) {
                 //跳转到支付页面
-                commonMethods.setCookie('PALACE_ORDER_SKUNO', this.showSku.skuId);
+                commonMethods.setCookie('PALACE_ORDER_SKUNO', this.skuId);
                 commonMethods.setCookie('PALACE_ORDER_NUMS', this.number);
                 commonMethods.setCookie('PALACE_ORDER_COUPONID', "");
                 commonMethods.setCookie('PALACE_ORDER_ADDRESS', "");
@@ -310,26 +327,6 @@ export default {
 
                     // 获取sku价格
                     this.getSkuPrice();
-
-                    // 选择商品
-                    $(document).on('click', '.sku-con-items a', function() {
-                        if( $(this).hasClass('active') ) {
-                            return;
-                        }
-                        var index = $(this).index();
-                        $('.sku-con-items a').removeClass('active');
-                        $(this).addClass('active');
-
-                        // 改变sku对象
-                        oThis.showSku = oThis.goodsDetails[index];
-                        oThis.skuId = oThis.showSku.skuId;
-                        oThis.count = oThis.showSku.count;
-
-                        // 重新获取sku区间价格
-                        oThis.getSkuPrice();
-
-                    });
-
                 });
             });
         },
