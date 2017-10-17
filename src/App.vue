@@ -48,7 +48,7 @@ export default {
     watch: {
         '$route' (to, from) {
             setTimeout(function() {
-                document.body.scrollTop = 0;
+                 document.body.scrollTop = document.documentElement.scrollTop =  0;
             }, 0);
         }
     },
